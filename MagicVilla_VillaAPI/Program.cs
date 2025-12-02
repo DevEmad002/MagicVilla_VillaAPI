@@ -1,5 +1,8 @@
+using MagicVilla_VillaAPI.Config;
 using MagicVilla_VillaAPI.Data;
 using MagicVilla_VillaAPI.Logging;
+using MagicVilla_VillaAPI.Repository;
+using MagicVilla_VillaAPI.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +20,10 @@ builder.Services.AddDbContext < ApplicationDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection"));
 
 });// Dependency Injection for DB Context
+
+
+builder.Services.AddScoped<IVillaRepository, VillaRepository>(); // Dependency Injection for Villa Repository
+builder.Services.AddAutoMapper(typeof(MappingConfig)); // Dependency Injection for AutoMapper
 
 builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddEndpointsApiExplorer();
