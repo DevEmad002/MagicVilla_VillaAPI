@@ -8,6 +8,5 @@ namespace MagicVilla_VillaAPI.Repository.IRepository
 
         Task <Villa> UpdateAsync(Villa entity);
 
-
     }
 }
