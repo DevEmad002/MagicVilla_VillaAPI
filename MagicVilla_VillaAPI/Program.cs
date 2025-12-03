@@ -22,6 +22,7 @@ builder.Services.AddDbContext < ApplicationDbContext>(option =>
 });// Dependency Injection for DB Context
 
 
+builder.Services.AddScoped<IVillaNumberRepository, VillaNumberRepository>();
 builder.Services.AddScoped<IVillaRepository, VillaRepository>(); // Dependency Injection for Villa Repository
 builder.Services.AddAutoMapper(typeof(MappingConfig)); // Dependency Injection for AutoMapper
 
