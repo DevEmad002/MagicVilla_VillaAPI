@@ -1,0 +1,49 @@
+﻿@model IEnumerable<MagicVilla_Web.Models.Dto.Villa.VillaDTO>
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <div class="row pb-3">
+                <div class="col">
+                    <h2 class="text-primary fw-bold">🏡 Villa List</h2>
+                </div>
+                <div class="col text-end">
+                    <a class="btn btn-primary">
+                        <i class="bi bi-plus-circle"></i> Create New Villa
+                    </a>
+                </div>
+            </div>
+
+            <table class="table table-hover table-bordered text-center align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Occupancy</th>
+                        <th>Price</th>
+                        <th style="width: 120px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Occupancy</td>
+                            <td>@item.Rate.ToString("c")</td>
+                            <td>
+                                <a class="btn btn-sm btn-warning">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <a class="btn btn-sm btn-danger ms-1">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
