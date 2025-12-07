@@ -1,0 +1,73 @@
+﻿@model MagicVilla_Web.Models.Dto.Villa.VillaDTO
+
+<form asp-action="DeleteVilla" method="post">
+    <br />
+
+    <div class="container border p-4 shadow-sm">
+        <h2 class="text-primary mb-3">Delete Villa</h2>
+        <hr />
+
+        <input hidden asp-for="Id" />
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="row mb-3">
+            <div class="col-6">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" disabled class="form-control" />
+            </div>
+
+            <div class="col-6">
+                <label asp-for="Rate" class="form-label"></label>
+                <input asp-for="Rate" disabled class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-6">
+                <label asp-for="Details" class="form-label"></label>
+                <textarea asp-for="Details" disabled class="form-control"></textarea>
+            </div>
+
+            <div class="col-6">
+                <label asp-for="ImageUrl" class="form-label"></label>
+                <input asp-for="ImageUrl" disabled class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-6">
+                <label asp-for="Occupancy" class="form-label"></label>
+                <input asp-for="Occupancy" disabled class="form-control" />
+            </div>
+
+            <div class="col-6">
+                <label asp-for="Sqft" class="form-label"></label>
+                <input asp-for="Sqft" disabled class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <label asp-for="Amenity" class="form-label"></label>
+                <textarea asp-for="Amenity" disabled class="form-control"></textarea>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-6">
+                <a asp-action="IndexVilla" asp-controller="Villa" class="btn btn-secondary w-100">
+                    Back To List
+                </a>
+            </div>
+
+            <div class="col-6">
+                <input type="submit" value="Delete" class="btn btn-danger w-100" />
+            </div>
+        </div>
+
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
