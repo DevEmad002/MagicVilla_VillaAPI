@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<MagicVilla_Web.Models.Dto.Villa.VillaDTO>
 
 <div class="container mt-4">
-    <div class="card shadow-sm">
+    <div class="card shadow-sm">coo
         <div class="card-body">
 
             <div class="row pb-3">
@@ -9,7 +9,7 @@
                     <h2 class="text-primary fw-bold">🏡 Villa List</h2>
                 </div>
                 <div class="col text-end">
-                    <a asp-action="CreateVilla" asp-controller ="Villa" class="btn btn-primary">
+                    <a asp-action="CreateVilla" asp-controller="Villa" class="btn btn-primary">
                         <i class="bi bi-plus-circle"></i> Create New Villa
                     </a>
 
@@ -35,7 +35,7 @@
                             <td>
                                 <a asp-controller="Villa" asp-action="UpdateVilla" asp-route-villaId="@item.Id" class="btn btn-sm btn-warning">
                                     <i class="bi bi-pencil-square"></i>
-                                </a> 
+                                </a>
                                 <a asp-controller="Villa" asp-action="DeleteVilla" asp-route-villaId="@item.Id" class="btn btn-sm btn-danger ms-1">
                                     <i class="bi bi-trash"></i>
                                 </a>

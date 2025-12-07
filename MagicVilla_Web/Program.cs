@@ -10,6 +10,9 @@ builder.Services.AddAutoMapper(typeof(MappingConfig)); // Adding AutoMapper with
 
 builder.Services.AddHttpClient<IVillaService, VillaService>();
 builder.Services.AddScoped<IVillaService, VillaService>();
+builder.Services.AddHttpClient<IVillaNumberService, VillaNumberService>(); // Registering VillaNumberService with HttpClient
+builder.Services.AddScoped<IVillaNumberService, VillaNumberService>(); // Registering IVillaNumberService for dependency injection
+
 
 var app = builder.Build();
 
